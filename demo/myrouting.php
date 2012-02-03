@@ -8,7 +8,7 @@ $rulelist = array(
         'action'=>'homepage.php',
     ),
     'rule_produto' => array(
-        'rule'=>'/produto/{titulo_slug}_{id}.{_format}',
+        'rule'=>'/produto/editar_{id}.{_format}',
         'action' => 'produto.php',
         'params' => array(            
             'id' => array('pattern'=>'\d+',),
@@ -22,7 +22,7 @@ $rulelist = array(
         'params' => array(
             'id' => array('pattern'=>'\d+',),
             'titulo_slug' => array('pattern'=>'[a-z-_]+'),
-            '_format' => array('pattern'=>'xml',),
+            '_format' => array('pattern'=>'html|pdf|txt',),
         ),
     ),
 );
