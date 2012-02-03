@@ -1,3 +1,4 @@
+
 Como Utilizar
 =============
 
@@ -35,11 +36,11 @@ que ele deve combinar com a regex '\d+'.
 A classe Route pode fazer com que URLs de formatos "iguais" executem 
 ações diferentes. Veja o exemplo:
 
-    # Visualiza o produto de ID 3570 da loja
-    http://www.meusite.com/produto/cama-elastica/3570
-    
-    # Mostra um formulário de edição do produto 3570
-    http://www.meusite.com/produto/editar/3570
+| # Visualiza o produto de ID 3570 da loja
+| http://www.meusite.com/produto/cama-elastica/3570
+|
+| # Mostra um formulário de edição do produto 3570    
+| http://www.meusite.com/produto/editar/3570
     
 Não entraremos em detalhes do código, pois o objetivo desse documento é
 lhe mostrar o que a classe Route pode fazer. Continue lendo.
@@ -61,12 +62,12 @@ de código, propor melhorias e comentar.
 Necessidades
 ~~~~~~~~~~~~
 
-# Pode-se notar que o arquivo ``.htaccess`` deixa a desejar em qualidade.
-  Por enquanto, a única coisa que ele faz é direcionar as requisições ao 
-  arquivo ``index.php``; 
+#. Pode-se notar que o arquivo ``.htaccess`` deixa a desejar em qualidade.
+   Por enquanto, a única coisa que ele faz é direcionar as requisições ao 
+   arquivo ``index.php``; 
 
-# Os arquivos de demonstração ainda estão bagunçados, organizá-los seria
-  muito bom, faço quando puder;
+#. Os arquivos de demonstração ainda estão bagunçados, organizá-los seria 
+   muito bom, faço quando puder;
   
 
 Caso de Sucesso
@@ -95,8 +96,8 @@ outsourcing em Curitiba (Paraná/Brasil). Gosto muito do que faço
 mas ainda não consegui explicar o que faço para minha mãe, acho
 que esse é o dilema de todo profissional de TI.
 
-Twitter:  @jonasruth
-Facebook: Jonas Ruth
-Google+:  Jonas Ruth
-LinkedIn: Jonas Ruth
-(uma rede social aqui): Jonas Ruth 
+| Twitter:  @jonasruth
+| Facebook: Jonas Ruth
+| Google+:  Jonas Ruth
+| LinkedIn: Jonas Ruth
+| (uma rede social aqui): Jonas Ruth 
