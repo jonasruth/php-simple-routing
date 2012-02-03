@@ -40,7 +40,9 @@ ações diferentes. Veja o exemplo:
     |
     | http://www.meusite.com/produto/cama-elastica/3570
     |
-    | # Mostra um formulário de edição do produto 3570    
+    |
+    | # Mostra um formulário de edição do produto 3570
+    |    
     | http://www.meusite.com/produto/editar/3570
     
 Não entraremos em detalhes do código, pois o objetivo desse documento é
@@ -98,7 +100,11 @@ mas ainda não consegui explicar o que faço para minha mãe, acho
 que esse é o dilema de todo profissional de TI.
 
     | Twitter:  @jonasruth
+    |
     | Facebook: Jonas Ruth
+    |
     | Google+:  Jonas Ruth
+    |
     | LinkedIn: Jonas Ruth
+    |
     | (uma rede social aqui): Jonas Ruth 
