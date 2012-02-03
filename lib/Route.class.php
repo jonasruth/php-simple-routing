@@ -11,7 +11,7 @@ class Route
     private $params;
     private $_protocol;
     private $_host;
-    private $_dir;    
+    private $_basedir;    
 
     public function __Construct(){ }
 
@@ -19,32 +19,40 @@ class Route
 
     public static function getInstance()
     {
-        if (!isset(self::$_instance)) { // Testa se há instância definifa na propriedade, caso sim, a classe não será instanciada novamente.
-            self::$_instance = new self; // o new self cria uma instância da própria classe à própria classe.
+        if (!isset(self::$_instance)) { // Teste se hÃ¡ instÃ¢ncia definifa na propriedade, caso sim, a classe nÃ£o serÃ¡ instanciada novamente.
+            self::$_instance = new self; // o new self cria uma instÃ¢ncia da prÃ³pria classe Ã  prÃ³pria classe.
         }
         return self::$_instance;
     }
-
-    public function init($url,$routeList){
-        $this->url = $url;
+    
+    public function setConfig($routeList,$host,$basedir,$protocol='http'){
+        
         $this->routeList = $routeList;
+        $this->_protocol = $protocol;
+        $this->_host     = $host;
+        $this->_basedir  = $basedir;
+        
+        return $this;
+        
+    }
+
+    public function init($url){
+        
+        $this->url = $url;
         $this->params = new stdClass;
-
-        $this->_protocol = 'http';
-        $this->_host = 'localhost';
-        $this->_dir  = '/teste/mysite/';
-
-        $this->urlNormalize();
+        $this->urlNormalize()->routePatternMake();
 
         return $this;
     }
 
     protected function urlNormalize(){
 
-        if(preg_match('/'. str_replace('/','\/',$this->_dir) .'([a-z_-]+\.php)?(.*)/',$_SERVER['REQUEST_URI'],$matches)){
+        if(preg_match('/'. str_replace('/','\/',$this->_basedir) .'([a-z_-]+\.php)?(.*)/',$this->url,$matches)){
             $this->url = $matches[2];
             $this->url = '/'.trim($this->url,'/');
-        }else throw new Exception('URL inválida.');
+        }else throw new Exception('URL invÃ¡lida.');
+        
+        return $this;
 
     }
 
@@ -73,47 +81,6 @@ class Route
         return $this;
     }
 
-    public function routePatternMakeOld()
-    {
-    
-        foreach($this->routeList as $rulename=>$rules)
-        {
-
-            $params = explode('/',trim($rules['rule'],'/'));
-            $param_vars = array();
-            
-            $rule_pattern_item = array(); // itens do pattern
-            foreach($params as $one_param_value)
-            {
-            
-                if(preg_match('/^([\w._-]+)?\{([\w_]+)\}([\w._-]+)?$/i',$one_param_value,$matches))
-                {                    
-                    array_push($param_vars,$matches[2]);
-                    if(!isset( $rules['params'][$matches[2]]['pattern'] ))
-                    {
-                        // copia para a real    
-                        $this->routeList[$rulename]['params'][$matches[2]]['pattern'] = '[\w:-]+';
-                        // copia para a copia do foreach
-                        $rules['params'][$matches[2]]['pattern'] = '[\w:-]+';
-                    }
-                    array_push($rule_pattern_item,$matches[1].'('. $rules['params'][$matches[2]]['pattern']. ')'.$matches[3]);
-                } 
-                else 
-                {
-                    array_push($rule_pattern_item,str_replace('.','\.',$one_param_value));
-                }
-                unset($matches);
-            }
-
-            $rule_pattern = '/^\/'.(implode('\/',$rule_pattern_item)).'$/i';
-
-            $this->routeList[$rulename]['pattern'] = $rule_pattern;
-
-        }
-
-        return $this;
-    }
-
     public function check()
     {
         $_params = new stdClass;
@@ -126,8 +93,6 @@ class Route
             $query_string = strstr($this->url,'?',false);
         }
 
-//         var_export($this->routeList['rule_produto']);
-            
         foreach($this->routeList as $rulename=>$rules){
     
             if(preg_match($rules['pattern'],$url,$matches)){      
@@ -154,7 +119,7 @@ class Route
             }
         }
 
-        if(!$matched)throw new Exception('Rota não existente.');
+        if(!$matched)throw new Exception('Rota nÃ£o existente.');
 
         return $this;
     }
@@ -166,7 +131,7 @@ class Route
                 $ruleCopy = preg_replace('/(\{' . $one_param_key . '\})/',$params[$one_param_key],$ruleCopy);
             }
         }
-        return $this->_protocol.'://'.$this->_host.$this->_dir.trim($ruleCopy,'/');
+        return $this->_protocol.'://'.$this->_host.$this->_basedir.trim($ruleCopy,'/');
     }
 
     public function getParams(){
@@ -180,6 +145,10 @@ class Route
 
     public function getMatchedRouteName(){
         return $this->matchedRoute['routename'];
+    }
+    
+    public function getMatchedRouteAction(){
+        return $this->matchedRoute['action'];
     }
 
     public function getMatchedRoute(){
