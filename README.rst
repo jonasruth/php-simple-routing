@@ -37,6 +37,7 @@ A classe Route pode fazer com que URLs de formatos "iguais" executem
 ações diferentes. Veja o exemplo:
 
     | # Visualiza o produto de ID 3570 da loja
+    |
     | http://www.meusite.com/produto/cama-elastica/3570
     |
     | # Mostra um formulário de edição do produto 3570    
