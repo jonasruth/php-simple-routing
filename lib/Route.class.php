@@ -1,7 +1,11 @@
 <?php
 
+class RouteNotFoundException extends Exception {
+    
+}
+
 class Route
-{     
+{
 
     private static $_instance;
 
@@ -81,6 +85,10 @@ class Route
         return $this;
     }
 
+    /**
+     * @throws RouteNotFoundException quando não encontra uma rota
+     * @return Route
+     */
     public function check()
     {
         $_params = new stdClass;
@@ -119,7 +127,7 @@ class Route
             }
         }
 
-        if(!$matched)throw new Exception('Rota não existente.');
+        if(!$matched)throw new RouteNotFoundException('Rota não existente.');
 
         return $this;
     }
