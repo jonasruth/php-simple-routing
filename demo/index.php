@@ -24,10 +24,17 @@ $rulelist = array(
     ),
 );
 
+$my_protocol = 'http';
+$my_domain   = 'localhost';
+$my_basedir  = '/jonas-php-library/demo/';
+
+$my_url_prefix = $my_protocol.'://'. $my_domain. $my_basedir;
+
 try {
 
-    $myRoute = Route::getInstance()
-        ->setConfig($rulelist,'localhost','/jonas-php-library/demo/','http')
+    $myRoute = Route::getInstance();
+    $myRoute
+        ->setConfig($rulelist,$my_domain,$my_basedir,$my_protocol)
         ->init($_SERVER['REQUEST_URI'])
         ->check();
     

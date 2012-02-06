@@ -1,2 +1,5 @@
+Options +FollowSymLinks
 RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !.(\.gif|\.jpg|\.png|\.css|\.js)
 RewriteRule ^.*$ index.php 

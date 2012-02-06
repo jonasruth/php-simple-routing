@@ -1,3 +1,13 @@
+<html>
+
+<head>
+<title>My homepage</title>
+<script type="text/javascript" src="<?php echo $my_url_prefix ?>js/main.js"></script>
+<link href="<?php echo $my_url_prefix ?>css/main.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
 <h1>PRODUTO</h1>
 
 <?php 
@@ -15,3 +25,8 @@ Action&nbsp;= <?php echo $myRoute->getMatchedRouteAction(); ?><br/>
     print_r($myRoute->getParams());
 
 ?>
+
+</body>
+
+
+</html>
