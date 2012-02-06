@@ -77,17 +77,16 @@ Caso de Sucesso
 ===============
 
 A classe ``Route`` foi criada com objetivo de implementar URLs
-Amigáveis em uma loja virtual que já estava há algum tempo em
-produção. Antes as URLs eram algo como "http://www.lojadomeuamigo.com.br/produto.php?id=9999" e
-hoje são "http://www.lojadomeuamigo.com.br/Produto/1130/Saca-Areia-C-Suporte-para-Guarda-Sol-e-Vara-de-Pesca"
-(o domínio real do site está sendo preservado, pois ainda não
-pedi autorização).
+Amigáveis na `**Mundiali** <http://www.mundiali.com.br>`_, uma loja 
+virtual que já estava há algum tempo em produção. Antes as URLs 
+eram algo como "http://www.lojadomeuamigo.com.br/produto.php?id=9999" e
+hoje são "http://www.lojadomeuamigo.com.br/Produto/1130/Saca-Areia-C-Suporte-para-Guarda-Sol-e-Vara-de-Pesca".
 
 A implantação ocorreu de forma gradativa: primeiro as páginas 
 estáticas e depois as páginas dinâmicas.
 
-Hoje, meu amigo possui URLs Amigáveis e muito flexíveis e não
-precisa se preocupar com a alteração no formato das URLs porque
+Hoje o meu amigo Evantoni, CEO da Mundiali possui URLs Amigáveis e 
+não precisa se preocupar com a alteração no formato das URLs, porque 
 a classe Route altera os links automaticamente.
 
 
