@@ -77,7 +77,7 @@ Caso de Sucesso
 ===============
 
 A classe ``Route`` foi criada com objetivo de implementar URLs
-Amigáveis na `**Mundiali** <http://www.mundiali.com.br>`_, uma loja 
+Amigáveis na `Mundiali.com.br <http://www.mundiali.com.br>`_, uma loja 
 virtual que já estava há algum tempo em produção. Antes as URLs 
 eram algo como "http://www.lojadomeuamigo.com.br/produto.php?id=9999" e
 hoje são "http://www.lojadomeuamigo.com.br/Produto/1130/Saca-Areia-C-Suporte-para-Guarda-Sol-e-Vara-de-Pesca".
