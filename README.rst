@@ -24,11 +24,11 @@ Apesar da simplicidade e da facilidade de uso, a classe Route permite
 que você deixe suas URLs como você quiser (ou quase), apenas escrevendo
 isso num arquivo de configuração.
 
-O Route não preestabelece um formato de definição de formato de URL, 
+Não preestabelece um formato de definição de formato de URL, 
 você escolhe como sua URL deve se parecer e diz o que deve ser feito 
 quando ela é acessada.
 
-O Route suporta que você valide os parâmetros da sua URL através de 
+Suporta que você valide os parâmetros da sua URL através de 
 expressões regulares (regex). Por exemplo, se você possui um ID de um 
 produto e quer que o formato dele seja de apenas dígitos, basta dizer 
 que ele deve combinar com a regex '\d+'. 
