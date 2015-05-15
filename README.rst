@@ -93,17 +93,6 @@ a classe Route altera os links automaticamente.
 Autor
 =====
 
-Meu nome é Jonas Ruth. Trabalho com PHP para uma empresa de
-outsourcing em Curitiba (Paraná/Brasil). Gosto muito do que faço
-mas ainda não consegui explicar o que faço para minha mãe, acho
-que esse é o dilema de todo profissional de TI.
-
-    | Twitter:  @jonasruth
-    |
     | Facebook: Jonas Ruth
     |
     | Google+:  Jonas Ruth
-    |
-    | LinkedIn: Jonas Ruth
-    |
-    | (uma rede social aqui): Jonas Ruth 
