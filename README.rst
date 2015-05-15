@@ -8,8 +8,8 @@ Route
 O que é?
 ~~~~~~~~
 
-A classe ``Route`` é classe PHP que possibilita a implementação 
-de URLs Amigáveis. 
+A classe ``Route`` possibilita a implementação 
+de URLs Amigáveis facilmente em projetos PHP. 
 
 Objetivo
 ~~~~~~~~
@@ -24,17 +24,15 @@ Apesar da simplicidade e da facilidade de uso, a classe Route permite
 que você deixe suas URLs como você quiser (ou quase), apenas escrevendo
 isso num arquivo de configuração.
 
-Não preestabelece um formato de definição de formato de URL, 
-você escolhe como sua URL deve se parecer e diz o que deve ser feito 
-quando ela é acessada.
+Não preestabelece um formato para suas URLs, você mesmo escolhe como sua 
+URL vai se parecer e define o que será executado a partir dela.
 
 Suporta que você valide os parâmetros da sua URL através de 
 expressões regulares (regex). Por exemplo, se você possui um ID de um 
 produto e quer que o formato dele seja de apenas dígitos, basta dizer 
 que ele deve combinar com a regex '\d+'. 
 
-A classe Route pode fazer com que URLs de formatos "iguais" executem 
-ações diferentes. Veja o exemplo:
+Alguns exemplos do que a classe ``Route`` pode fazer:
 
     | # Visualiza o produto de ID 3570 da loja
     |
