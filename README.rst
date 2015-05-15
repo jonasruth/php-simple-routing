@@ -93,6 +93,8 @@ a classe Route altera os links automaticamente.
 Autor
 =====
 
-    | Facebook: Jonas Ruth
+    | Jonas Ruth
+    | jonasruth@gmail.com
     |
+    | Facebook: Jonas Ruth
     | Google+:  Jonas Ruth
