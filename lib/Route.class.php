@@ -98,7 +98,6 @@ class Route
      */
     public function check()
     {
-        $_params = new stdClass;
         $_route = null;
         $matched = false;
         $url = $this->url;
