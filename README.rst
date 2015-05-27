@@ -96,3 +96,4 @@ Autor
     |
     | Facebook: Jonas Ruth
     | Google+:  Jonas Ruth
+    | Instagram: @jonas.ruth
