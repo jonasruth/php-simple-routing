@@ -3,6 +3,7 @@
 header('Content-type:text/html; charset=UTF-8');
 
 require '../lib/Route.class.php';
+use JonasRuth\PhpSimpleRoute\Route;
 
 $rulelist = array(
     'rule_startpage' => array(
@@ -34,7 +35,8 @@ try {
 
     $myRoute = Route::getInstance();
     $myRoute
-        ->setConfig($rulelist,$my_domain,$my_basedir,$my_protocol)
+        ->setConfig($my_domain,$my_basedir,$my_protocol)
+        ->setRouteList($rulelist)
         ->init($_SERVER['REQUEST_URI'])
         ->check();
     
@@ -45,6 +47,3 @@ try {
     include 'route-not-found.php';
     
 }
-
-
-?>

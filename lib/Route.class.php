@@ -1,6 +1,8 @@
 <?php
 
-class RouteNotFoundException extends Exception
+namespace JonasRuth\PhpSimpleRoute;
+
+class RouteNotFoundException extends \Exception
 {
 
 }
@@ -34,10 +36,9 @@ class Route
         return self::$_instance;
     }
 
-    public function setConfig($routeList, $host, $basedir, $protocol = 'http')
+    public function setConfig($host, $basedir, $protocol = 'http')
     {
 
-        $this->routeList = $routeList;
         $this->_protocol = $protocol;
         $this->_host = $host;
         $this->_basedir = $basedir;
@@ -46,11 +47,19 @@ class Route
 
     }
 
+    public function setRouteList($routeList)
+    {
+
+        $this->routeList = $routeList;
+        return $this;
+
+    }
+
     public function init($url)
     {
 
         $this->url = $url;
-        $this->params = new stdClass;
+        $this->params = new \stdClass;
         $this->urlNormalize()->routePatternMake();
 
         return $this;
@@ -62,7 +71,7 @@ class Route
         if (preg_match('/' . str_replace('/', '\/', $this->_basedir) . '([a-z_-]+\.php)?(.*)/', $this->url, $matches)) {
             $this->url = $matches[2];
             $this->url = '/' . trim($this->url, '/');
-        } else throw new Exception('URL inválida.');
+        } else throw new \Exception('URL inválida.');
 
         return $this;
 
